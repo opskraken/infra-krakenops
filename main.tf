@@ -44,6 +44,26 @@ module "infra_nesohq" {
   }
 }
 
+module "infra_krakens_discord" {
+  source = "./github/repo"
+  context = {
+    owner            = local.org_name
+    name             = "krakens-discord"
+    visibility       = "private"
+    description      = "discord managed by Terraform"
+    codereaders      = []
+    maintainers      = []
+    topics           = ["terraform", "infrastructure-as-code", "iac", "github", "automation", "managed"]
+    mvp_goal         = "centralize NesoHQ infrastructure configurations"
+    launch_timeline  = "Q4 2025"
+    success_metrics  = "10 infra components managed, 90% uptime"
+    problem_example  = "Scattered infra configs lead to errors"
+    solution_example = "Unified Terraform-managed infra"
+    tech_stack       = "Terraform, AWS"
+    platform         = "WEB"
+  }
+}
+
 module "infra_krakenops" {
   source = "./github/repo"
   context = {
