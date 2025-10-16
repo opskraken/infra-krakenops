@@ -263,3 +263,23 @@ module "vps_study" {
     platform         = "Linux"
   }
 }
+
+module "krakens_cli" {
+  source = "./github/repo"
+  context = {
+    owner            = local.org_name
+    name             = "krakens-cli"
+    visibility       = "private"
+    description      = "Private repository for managing krakens cli"
+    codereaders      = []
+    maintainers      = []
+    topics           = ["cli", "research", "infrastructure"]
+    mvp_goal         = "prototype VPS configurations"
+    launch_timeline  = "Q1 2026"
+    success_metrics  = "5 VPS configs tested, 90% stability"
+    problem_example  = "VPS setup is manual and slow"
+    solution_example = "Automated VPS config scripts"
+    tech_stack       = "Terraform, Bash"
+    platform         = "Linux"
+  }
+}
