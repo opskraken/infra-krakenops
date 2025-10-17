@@ -244,11 +244,11 @@ module "archive_infra" {
   }
 }
 
-module "vps_study" {
+module "vps_sakamoto" {
   source = "./github/repo"
   context = {
     owner            = local.org_name
-    name             = "vps-study"
+    name             = "vps-sakamoto"
     visibility       = "private"
     description      = "Private repository for managing VPS configurations and R&D"
     codereaders      = []
@@ -272,7 +272,7 @@ module "krakens_cli" {
     visibility       = "private"
     description      = "Private repository for managing krakens cli"
     codereaders      = []
-    maintainers      = []
+    maintainers      = ["saadrupai"]
     topics           = ["cli", "research", "infrastructure"]
     mvp_goal         = "prototype VPS configurations"
     launch_timeline  = "Q1 2026"
