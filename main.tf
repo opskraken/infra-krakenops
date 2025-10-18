@@ -283,3 +283,23 @@ module "krakens_cli" {
     platform         = "Linux"
   }
 }
+
+module "vps_webhook_github" {
+  source = "./github/repo"
+  context = {
+    owner            = local.org_name
+    name             = "vps-webhook-github"
+    visibility       = "private"
+    description      = "Private repository for managing github pushes"
+    codereaders      = []
+    maintainers      = ["saadrupai"]
+    topics           = ["research", "infrastructure"]
+    mvp_goal         = "prototype VPS management by github hook"
+    launch_timeline  = "Q1 2026"
+    success_metrics  = "5 VPS configs tested, 90% stability"
+    problem_example  = "VPS setup is manual and slow"
+    solution_example = "Automated VPS config scripts"
+    tech_stack       = "Terraform, Bash"
+    platform         = "Linux"
+  }
+}
